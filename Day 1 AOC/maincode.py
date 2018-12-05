@@ -1,0 +1,6 @@
+nums = open("numbers.txt", "r")
+n = nums.read()
+nlist = n.split("\n")
+anslist = list(map(int,nlist))
+ans = sum(anslist)
+print(ans)
