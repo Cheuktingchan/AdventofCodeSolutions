@@ -19,3 +19,13 @@ for i in range(len(anslist)):
 
 ptwolist = list(ptwodic.values())
 
+ptwoset = set()
+
+for i in range(len(ptwolist)):
+    if int(ptwolist[i]) in ptwoset:
+        print(ptwolist[i])
+    elif not ptwolist[i] in ptwoset:
+        ptwoset.add(int(ptwolist[i]))
+    
+
+
