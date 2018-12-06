@@ -9,23 +9,20 @@ print(ans)
 
 ######### PART 2 ################
 
-ptwodic = {}
-ptwodic["0"] = anslist[0]
-for i in range(len(anslist)):
-    if i == 0:
-        pass
+ptwoans = 0
+ptwoset = {0}
+
+while True:
+    for num in anslist:
+        ptwoans += num
+        if ptwoans in ptwoset:
+            print(ptwoans)
+            break
+        ptwoset.add(ptwoans)
     else:
-        ptwodic[str(i)] = ptwodic[str(i-1)] + anslist[i]
+        continue
+    break
 
-ptwolist = list(ptwodic.values())
-
-ptwoset = set()
-
-for i in range(len(ptwolist)):
-    if int(ptwolist[i]) in ptwoset:
-        print(ptwolist[i])
-    elif not ptwolist[i] in ptwoset:
-        ptwoset.add(int(ptwolist[i]))
     
 
 
