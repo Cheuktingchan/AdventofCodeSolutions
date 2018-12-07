@@ -4,6 +4,8 @@ for i in range(1000):
     for it in range(1000):
         grid.setdefault(str(it),[]).append(0)
 
-print(grid)
+elves = open("claims.txt","r")
+elv = elves.read()
+claims = elv.split("\n")
+
     
-        
