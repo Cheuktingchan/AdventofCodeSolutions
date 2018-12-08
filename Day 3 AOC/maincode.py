@@ -1,7 +1,8 @@
+import itertools
 grid = {}
 for i in range(1000):
     grid[str(i)] = []
-    for it in range(1000):
+    for it in range(1001):
         grid.setdefault(str(it),[]).append(0)
 
 elves = open("claims.txt","r")
@@ -44,5 +45,23 @@ for sides in size:
 
 sidex = list(map(int,sizex))
 sidey = list(map(int,sizey))
-            
     
+for i,cordy in enumerate(coordy):
+    cordx = coordx[i]
+    sizex = sidex[i]
+    sizey = sidey[i]
+    for a in range(sizex):
+        for b in range(sizey):
+            try:
+                grid[str(cordy + b)][cordx + a] += 1
+            except IndexError:
+                continue
+
+allnums = list(grid.values())
+flat = itertools.chain.from_iterable(allnums)
+
+overlap = 0
+for a in flat:
+    if a > 1:
+        overlap += 1
+print(overlap)
