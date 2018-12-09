@@ -43,11 +43,12 @@ for i,e in enumerate(log):
 for i,e in enumerate(log):
     if infos[i][0] == "G":
         dicdiff[str(infos[i][:-12].split("#")[1])] = sum(dic[str(infos[i][:-12].split("#")[1])])
-print(dicdiff) # 73
-print(dic["73 "]) # 44
-print( 73 * 44)
-
-
+dv = list(dicdiff.values())
+dk = list(dicdiff.keys())
+di = dv.index(max(dv))
+guardans = dk[di]
+minans = dic[str(guardans)].index(max(dic[str(guardans)]))
+print( int(guardans) * minans)
         
 
         

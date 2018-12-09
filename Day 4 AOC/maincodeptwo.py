@@ -43,12 +43,11 @@ for i,e in enumerate(log):
 for i,e in enumerate(log):
     if infos[i][0] == "G":
         dicdiff[str(infos[i][:-12].split("#")[1])] = sum(dic[str(infos[i][:-12].split("#")[1])])
-dicv = dic.values()
+dicv = list(dic.values())
 dick = list(dic.keys())
-for i in dicv:
-    print(max(i) ) #guard with highest minute slept is the 17th one
-print(dick[17]) #17th one is guard 191
+de = dicv.index(max(dicv)) + 1
+guardans = dick[de]
+dicans = dic[guardans]
+minans = dicans.index(max(dicans))
+print(minans * int(guardans))
 
-print(dic["191 "]) # minute 26 is the one guard 191 slept the most
-
-print(26 * 191)
